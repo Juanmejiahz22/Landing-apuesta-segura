@@ -1,0 +1,691 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* TikTok Banner Styles */
+.tiktok-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: linear-gradient(135deg, #ff0050 0%, #00f2ea 100%);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.5s ease-out;
+  overflow: visible;
+}
+
+.tiktok-banner.hidden {
+  display: none;
+}
+
+.tiktok-banner-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.tiktok-banner-content p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
+.tiktok-banner-content strong {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.tiktok-banner-content ol {
+  text-align: left;
+  display: inline-block;
+  margin: 12px auto;
+  padding-left: 20px;
+  font-size: 0.9rem;
+}
+
+.tiktok-banner-content li {
+  margin: 6px 0;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.arrow-pointer {
+  position: fixed;
+  top: -5px;
+  right: 5px;
+  z-index: 10000;
+  animation: arrowBounce 1.2s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8)) 
+          drop-shadow(0 0 15px rgba(255, 215, 0, 0.6))
+          drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+  pointer-events: none;
+}
+
+.arrow-pointer svg {
+  width: 70px;
+  height: 70px;
+}
+
+@keyframes arrowBounce {
+  0%, 100% {
+    transform: translate(0, 0);
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8)) 
+            drop-shadow(0 0 15px rgba(255, 215, 0, 0.6))
+            drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+  }
+  50% {
+    transform: translate(5px, -5px);
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 1)) 
+            drop-shadow(0 0 20px rgba(255, 215, 0, 0.8))
+            drop-shadow(0 6px 10px rgba(0, 0, 0, 0.7));
+  }
+}
+
+@media (max-width: 400px) {
+  .arrow-pointer {
+    right: 2px;
+    top: -8px;
+  }
+  
+  .arrow-pointer svg {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+body.tiktok-detected {
+  padding-top: 220px !important;
+}
+
+@media (max-width: 400px) {
+  body.tiktok-detected {
+    padding-top: 240px !important;
+  }
+}
+
+body {
+  background: #000000; /* fondo negro pedido */
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  /* bajar todo: alinear al inicio y añadir padding-top para separar del borde superior */
+  align-items: flex-start;
+  padding-top: 48px;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  max-width: 520px;
+  padding: 28px;
+  border-radius: 12px;
+  /* marco en azul oscuro */
+  border: 2px solid #082a6f;
+  box-shadow: 0 10px 30px rgba(8, 42, 111, 0.25);
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+.content > p {
+  font-style: italic;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: #ddd;
+}
+
+.money-animation {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0 25px;
+  font-size: 2rem;
+}
+
+.money-bill {
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.money-bill:nth-child(1) { animation-delay: 0s; }
+.money-bill:nth-child(2) { animation-delay: 0.5s; }
+.money-bill:nth-child(3) { animation-delay: 1s; }
+.money-bill:nth-child(4) { animation-delay: 1.5s; }
+.money-bill:nth-child(5) { animation-delay: 2s; }
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg); 
+    opacity: 1;
+  }
+  25% { 
+    transform: translateY(-10px) rotate(5deg); 
+    opacity: 0.9;
+  }
+  50% { 
+    transform: translateY(-15px) rotate(-3deg); 
+    opacity: 0.95;
+  }
+  75% { 
+    transform: translateY(-8px) rotate(4deg); 
+    opacity: 0.92;
+  }
+}
+
+.site-name {
+  display: inline-block;
+  font-family: 'Poppins', 'Roboto', sans-serif;
+  /* slightly reduced to avoid line-break when flames are larger */
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #e6f0ff; /* tono claro que contraste con el negro */
+  letter-spacing: 1px;
+  text-shadow: 0 2px 14px rgba(8, 42, 111, 0.6);
+  white-space: nowrap; /* keep on one line */
+  text-decoration: underline;
+  text-decoration-color: #0b63d6;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
+  vertical-align: middle;
+}
+
+/* Flames around title */
+.flame {
+  display: inline-block;
+  /* enlarged flames per user request */
+  font-size: 1.8rem;
+  margin: 0 6px;
+  transform-origin: center bottom;
+  animation: flicker 2s infinite ease-in-out;
+  vertical-align: middle;
+}
+.flame.right { animation-delay: 0.4s; }
+
+@keyframes flicker {
+  0% { 
+    transform: scaleX(0.95) scaleY(1) translateY(0) rotate(-1deg); 
+    opacity: 0.95; 
+    filter: brightness(1) hue-rotate(0deg);
+  }
+  15% { 
+    transform: scaleX(1.05) scaleY(1.12) translateY(-4px) rotate(2deg); 
+    opacity: 1; 
+    filter: brightness(1.2) hue-rotate(10deg);
+  }
+  30% { 
+    transform: scaleX(0.92) scaleY(0.88) translateY(2px) rotate(-2deg); 
+    opacity: 0.85; 
+    filter: brightness(0.88) hue-rotate(-8deg);
+  }
+  45% { 
+    transform: scaleX(1.02) scaleY(1.08) translateY(-3px) rotate(1deg); 
+    opacity: 0.98; 
+    filter: brightness(1.12) hue-rotate(6deg);
+  }
+  60% { 
+    transform: scaleX(0.96) scaleY(0.92) translateY(1px) rotate(-1deg); 
+    opacity: 0.88; 
+    filter: brightness(0.92) hue-rotate(-5deg);
+  }
+  75% { 
+    transform: scaleX(1.03) scaleY(1.06) translateY(-2px) rotate(2deg); 
+    opacity: 0.96; 
+    filter: brightness(1.08) hue-rotate(8deg);
+  }
+  90% { 
+    transform: scaleX(0.98) scaleY(0.95) translateY(0) rotate(-1deg); 
+    opacity: 0.9; 
+    filter: brightness(0.95) hue-rotate(-3deg);
+  }
+  100% { 
+    transform: scaleX(0.95) scaleY(1) translateY(0) rotate(-1deg); 
+    opacity: 0.95; 
+    filter: brightness(1) hue-rotate(0deg);
+  }
+}
+
+/* Scroll animations - bounce in effect */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Golden aura effect for carousel */
+.carousel.golden-glow .slides {
+  animation: goldenPulse 2s ease-in-out;
+  box-shadow: 0 0 30px 8px rgba(255, 215, 0, 0.8),
+              0 0 60px 15px rgba(255, 223, 0, 0.5),
+              0 8px 24px rgba(8, 42, 111, 0.2);
+  border-color: #ffd700;
+}
+
+@keyframes goldenPulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px 5px rgba(255, 215, 0, 0.6),
+                0 0 40px 10px rgba(255, 223, 0, 0.3),
+                0 8px 24px rgba(8, 42, 111, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 40px 12px rgba(255, 215, 0, 0.9),
+                0 0 80px 20px rgba(255, 223, 0, 0.6),
+                0 8px 24px rgba(8, 42, 111, 0.2);
+  }
+}
+
+/* Golden CTA buttons */
+.golden-cta {
+  display: inline-block;
+  padding: 18px 36px;
+  margin: 20px auto;
+  font-size: 1.35rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+  color: #0a2540;
+  border: 3px solid #ffaa00;
+  box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4);
+  border-radius: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.golden-cta:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6);
+}
+
+.golden-cta.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+
+.golden-cta.activated {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  animation: goldenButtonPulse 2s ease-in-out infinite;
+}
+
+@keyframes goldenButtonPulse {
+  0%, 100% { 
+    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5),
+                0 0 20px rgba(255, 215, 0, 0.4);
+    border-color: #ffaa00;
+  }
+  50% { 
+    box-shadow: 0 12px 50px rgba(255, 215, 0, 0.8),
+                0 0 40px rgba(255, 215, 0, 0.7);
+    border-color: #ffd700;
+  }
+}
+
+@media (max-width: 420px) {
+  .golden-cta {
+    padding: 14px 24px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Final CTA button spacing */
+.final-cta {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+/* Slower scroll animation for final button */
+.final-cta.scroll-animate {
+  transition: opacity 1.2s ease-out, transform 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Logo */
+.logo {
+  width: 180px; /* más grande para que el logo sea claramente visible */
+  height: auto;
+  display: block;
+  margin: 0 auto 14px auto;
+  border-radius: 10px;
+  border: 2px solid rgba(8,42,111,0.12);
+  box-shadow: 0 6px 18px rgba(8,42,111,0.12);
+}
+
+/* Services box */
+.services {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.services h2 {
+  color: #dfeeff;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+.service-box {
+  border: 2px solid #082a6f; /* azul oscuro */
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(11, 42, 112, 0.04);
+}
+
+.service-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 4px;
+}
+
+.service-icon {
+  font-size: 26px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon .icon {
+  display: block;
+}
+
+/* no empty rules needed here; SVG fills are defined inline */
+
+/* Tint the svg shapes to match brand colors while keeping the fill within the icon */
+.icon-whatsapp path { filter: none; }
+.icon-telegram path { filter: none; }
+
+/* Target top-level svg for sizing and alignment */
+.service-icon svg {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+/* Video container */
+.video-container {
+  margin: 20px auto;
+  max-width: 100%;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.promo-video {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  display: block;
+  aspect-ratio: 9 / 16;
+  min-height: 550px;
+  border-radius: 10px;
+  border: 2px solid #082a6f;
+  box-shadow: 0 8px 24px rgba(8, 42, 111, 0.2);
+  background: #000;
+}
+
+@media (max-width: 400px) {
+  .promo-video {
+    min-height: 480px;
+  }
+}
+
+/* Carousel styles */
+.carousel {
+  margin: 18px auto 6px auto;
+  /* increase carousel width so cropped photos can be seen more fully; keep within container padding */
+  max-width: 460px; /* container max inner width is ~464px (520 - padding), so 460 fits */
+  width: 100%;
+}
+
+
+.carousel .slides {
+  position: relative;
+  width: 100%;
+  /* formato vertical tipo móvil: alto mayor que ancho (más compacto) */
+  /* reducido un ~15% respecto al valor anterior para ser más compacto */
+  height: 442px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid #082a6f;
+  background: #000; /* fondo negro para letterboxing si la imagen no cubre */
+}
+
+.carousel .slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* volver a object-fit: cover para que las capturas de chat llenen el marco vertical */
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.4s ease;
+  /* separar un poco las fotos del marco */
+  padding: 10px;
+  box-sizing: border-box;
+  transform: scale(0.98);
+}
+
+.carousel .slide.active {
+  opacity: 1;
+}
+
+/* Make only the first slide look slightly more distant/zoomed-out */
+/* Target the first slide in the carousel and show it slightly more distant
+   while keeping object-fit: cover so it remains cropped. This keeps markup
+   unchanged and centralizes styling in CSS. */
+/* first-slide special scaling removed so all slides render the same framing */
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Larger carousel control buttons for easier tapping/clicking */
+.carousel-btn {
+  background: #082a6f;
+  color: #fff;
+  border: none;
+  padding: 12px 16px; /* increased */
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.6rem; /* larger symbol */
+  min-width: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn:hover { background: #0b4aa0; transform: translateY(-2px); }
+
+/* Only allow clicks on the currently visible slide to avoid invisible slides
+  (stacked absolutely) capturing pointer events */
+.carousel .slide { cursor: default; pointer-events: none; }
+.carousel .slide.active { cursor: pointer; pointer-events: auto; }
+
+/* Lightbox (modal) styles */
+.lightbox { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 1000; }
+.lightbox.open { display: flex; }
+.lightbox-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.85); }
+.lightbox-content { position: relative; max-width: 96vw; max-height: 96vh; z-index: 1001; display: flex; align-items: center; justify-content: center; }
+.lightbox-content img { max-width: 96vw; max-height: 92vh; object-fit: contain; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+.lightbox-close { position: absolute; top: -12px; right: -12px; background: #ffffff; color: #042a5f; border: none; width: 44px; height: 44px; border-radius: 50%; font-size: 1.25rem; cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,0.4); }
+.lightbox-close:hover { transform: scale(1.03); }
+
+@media (max-width: 420px) {
+  .carousel-btn { padding: 10px 12px; font-size: 1.25rem; min-width: 44px; }
+  .lightbox-close { width: 36px; height: 36px; font-size: 1rem; }
+}
+
+@media (max-width: 420px) {
+  .carousel .slides { height: 340px; }
+  .site-name { font-size: 2rem; }
+  .logo { width: 140px; }
+}
+
+@media (min-width: 900px) {
+  /* en pantallas grandes permitir mayor altura del carrusel vertical */
+  .carousel .slides { height: 620px; }
+}
+
+.service-text .service-title {
+  font-weight: 700;
+  color: #e6f0ff;
+  margin-bottom: 4px;
+}
+
+/* How it works block */
+.how-it-works {
+  margin: 18px 0;
+  text-align: left;
+}
+.how-title {
+  font-size: 1.05rem;
+  color: #fff;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  animation: pulse 2.6s infinite;
+}
+.how-body {
+  background: linear-gradient(180deg, rgba(8,42,111,0.06), rgba(11,74,160,0.03));
+  border: 2px solid #082a6f;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: #e8f3ff;
+  line-height: 1.5;
+}
+.how-body p { margin: 8px 0; }
+.how-note { font-style: italic; color: #ffd; }
+
+.service-link {
+  color: #cfe6ff;
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+.service-link:hover {
+  color: #ffffff;
+}
+
+/* CTA main color: blue gradient and svg icon spacing */
+.main-cta {
+  /* updated gradient: cooler blue -> light cyan -> white */
+  background: linear-gradient(90deg, #0b63d6 0%, #6ec1ff 60%, #f0fbff 100%);
+  color: #042a5f; /* dark-blue text for contrast */
+  border: none;
+  display: inline-block;
+  /* bigger padding and font-size to make CTA larger */
+  padding: 22px 48px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  box-shadow: 0 16px 48px rgba(10,80,200,0.20);
+  border-radius: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.main-cta .cta-icon { vertical-align: middle; margin-right: 14px; filter: drop-shadow(0 8px 24px rgba(6,42,100,0.22)); width:34px; height:34px; }
+
+/* Responsive: keep CTA big on desktop but reasonable on small screens */
+@media (max-width: 420px) {
+  .main-cta {
+    padding: 12px 22px;
+    font-size: 1.04rem;
+    letter-spacing: 0.6px;
+  }
+  .main-cta .cta-icon { width:20px; height:20px; margin-right:10px; }
+}
+
+/* Floating emojis */
+/* Floating emojis removed as requested */
+
+p {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* Styles for both <button> and the fallback <a id="telegramBtn"> */
+/* Generic button style */
+.btn,
+button {
+  background-color: #082a6f; /* azul oscuro por defecto */
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.2s, transform 0.12s, box-shadow 0.15s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover,
+button:hover {
+  background-color: #0b4aa0; /* hover ligeramente más brillante */
+  transform: translateY(-2px);
+}
+
+.btn:focus,
+button:focus {
+  outline: 3px solid rgba(11, 74, 160, 0.2);
+  outline-offset: 2px;
+}
+
+/* Specific service button */
+.service-cta {
+  background: linear-gradient(180deg, rgba(8,42,111,1), rgba(11,74,160,1));
+  padding: 9px 16px;
+  font-weight: 700;
+}
+
+/* Duplicate warm CTA removed; unified .main-cta styles are defined earlier */
+
+@keyframes pulse {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-4px) scale(1.02); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+.privacy-link {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.privacy-link a {
+  font-size: 12px;
+  color: #aaa;
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+.privacy-link a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Predicciones Deportivas</title>
+  <!-- Display font for the title -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- TikTok Browser Detection Banner -->
+  <div id="tiktokBanner" class="tiktok-banner hidden">
+    <div class="tiktok-banner-content">
+      <p><strong>⚠️ Estás en TikTok</strong></p>
+      <p>Para unirte al canal, debes abrir esta página en tu navegador:</p>
+      <ol>
+        <li>Toca los 3 puntos <strong>⋯</strong> arriba a la derecha</li>
+        <li>Selecciona <strong>"Abrir en navegador"</strong></li>
+      </ol>
+    </div>
+    <div class="arrow-pointer">
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Arrow shaft pointing diagonally up-right -->
+        <path d="M 15 65 L 65 15" stroke="#FFD700" stroke-width="6" stroke-linecap="round"/>
+        <!-- Arrow head -->
+        <path d="M 65 15 L 50 15 M 65 15 L 65 30" stroke="#FFD700" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Glow effect circle -->
+        <circle cx="65" cy="15" r="8" fill="#FFD700" opacity="0.5"/>
+      </svg>
+    </div>
+  </div>
+
+  <section class="container">
+    <div class="content">
+      <!-- Logo -->
+      <img class="logo" src="assets/logo.jpg" alt="Apuestas Seguras logo" />
+
+      <h1 class="title-row">
+        <span class="flame left">🔥</span>
+        <span class="site-name">APUESTAS SEGURAS</span>
+        <span class="flame right">🔥</span>
+      </h1>
+      <p>Únete a nuestro canal exclusivo de Telegram y recibe las mejores apuestas cada día totalmente gratis.</p>
+      <div class="money-animation">
+        <span class="money-bill">💵</span>
+        <span class="money-bill">💰</span>
+        <span class="money-bill">💵</span>
+        <span class="money-bill">💰</span>
+        <span class="money-bill">💵</span>
+      </div>
+  <a id="telegramBtn" class="btn main-cta" href="https://t.me/+fzyyyIPlGNswY2Jh" target="_blank" rel="noopener noreferrer">
+        <!-- Telegram icon inside main CTA -->
+        <svg class="cta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="12" fill="#fff" opacity="0.06" />
+          <path fill="#fff" d="M21.6 3.6c-.2-.7-.9-1.1-1.6-.9L2.9 9.1c-.6.2-.7 1.1-.1 1.4l4.1 1.6 1.6 4.6c.2.6 1 0 .9-.3l-.7-2.5 4.4 3c.5.3 1.1 0 1.2-.6l3.2-17.1c.1-.2.1-.4 0-.6zM9.6 13.3l6.1-5.1-7.2 4.9 1.1.2z" />
+        </svg>
+        Ir al Canal
+      </a>
+
+      <!-- Carrusel -->
+      <div class="carousel scroll-animate" id="carousel" aria-roledescription="carousel">
+        <div class="slides">
+          <img src="assets/slide1.jpg" class="slide active" alt="Imagen 1" />
+          <img src="assets/slide2.jpg" class="slide" alt="Imagen 2" />
+          <img src="assets/slide3.jpg" class="slide" alt="Imagen 3" />
+          <img src="assets/slide4.jpg" class="slide" alt="Imagen 4" />
+          <img src="assets/slide5.jpg" class="slide" alt="Imagen 5" />
+          <img src="assets/slide6.jpg" class="slide" alt="Imagen 6" />
+          <img src="assets/slide7.jpg" class="slide" alt="Imagen 7" />
+          <img src="assets/slide8.jpg" class="slide" alt="Imagen 8" />
+          <img src="assets/slide9.jpg" class="slide" alt="Imagen 9" />
+          <img src="assets/slide10.jpg" class="slide" alt="Imagen 10"/>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn prev" aria-label="Anterior">‹</button>
+          <button class="carousel-btn next" aria-label="Siguiente">›</button>
+        </div>
+      </div>
+
+      <!-- Second CTA button -->
+      <a class="btn main-cta scroll-animate" href="https://t.me/+fzyyyIPlGNswY2Jh" target="_blank" rel="noopener noreferrer" style="margin-top: 30px; margin-bottom: 30px;">
+        <svg class="cta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="12" fill="#fff" opacity="0.06" />
+          <path fill="#fff" d="M21.6 3.6c-.2-.7-.9-1.1-1.6-.9L2.9 9.1c-.6.2-.7 1.1-.1 1.4l4.1 1.6 1.6 4.6c.2.6 1 0 .9-.3l-.7-2.5 4.4 3c.5.3 1.1 0 1.2-.6l3.2-17.1c.1-.2.1-.4 0-.6zM9.6 13.3l6.1-5.1-7.2 4.9 1.1.2z" />
+        </svg>
+        Échale un vistazo al canal
+      </a>
+
+      <!-- Video -->
+      <div class="video-container scroll-animate">
+        <iframe 
+          id="promoVideo"
+          class="promo-video" 
+          src="https://www.youtube-nocookie.com/embed/jE9QrVP1GyI?enablejsapi=1"
+          title="Video promocional" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <!-- Botón dorado especial 1 -->
+      <a id="goldenBtn1" class="btn golden-cta hidden" href="https://t.me/+fzyyyIPlGNswY2Jh" target="_blank" rel="noopener noreferrer">
+        ¿Vas a perder la oportunidad?
+      </a>
+
+      <!-- How it works / explanatory block -->
+      <section class="how-it-works scroll-animate" aria-labelledby="how-heading">
+        <h2 id="how-heading" class="how-title">❓ COMO GANAS DINERO ACÁ? ⬇</h2>
+
+        <div class="how-body">
+          <p>💯 Ganamos dinero apostando en deportes, en este sentido tú <strong>NO</strong> necesitas saber nada del tema, precisamente para eso me tienes a mi. Yo haré todo por ti, tu sólo vas a cobrar.</p>
+
+          <p>✅ Yo te voy a guiar en cada paso para que te conviertas en alguien exitoso y rentable en esto.</p>
+
+          <p>‼ El servicio donde tendrás acceso a toda esta guía y a las ganancias es el servicio <strong>premium</strong>, la info de este te la pasé hace un rato. Revísala y si te interesa acceder me cuentas medio de pago 😃</p>
+
+        </div>
+      </section>
+
+      <!-- Servicios -->
+      <section class="services scroll-animate" aria-labelledby="services-heading">
+        <h2 id="services-heading">Servicios gratuitos y seguros</h2>
+
+        <div class="service-box">
+          <div class="service-item">
+            <span class="service-icon" aria-hidden="true">
+              <!-- Ícono WhatsApp -->
+              <svg class="icon icon-whatsapp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+                <path fill="#25D366" d="M20.52 3.48A11.91 11.91 0 0012 0C5.373 0 .01 5.37.01 12A11.9 11.9 0 003.02 18.6L0 24l5.55-3.02A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12 0-3.2-1.25-6.17-3.48-8.52z" opacity=".08"/>
+                <path fill="#fff" d="M19.1 14.1c-.3-.15-1.75-.86-2.02-.96-.27-.1-.46-.15-.65.15-.19.3-.74.96-.9 1.15-.16.19-.33.22-.61.07-.28-.15-1.18-.44-2.25-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.29-.02-.45.13-.6.12-.12.28-.31.42-.47.14-.16.19-.28.28-.46.09-.19.05-.36-.02-.5-.07-.15-.65-1.56-.89-2.15-.23-.56-.46-.48-.63-.49-.16-.01-.35-.01-.54-.01s-.5.07-.76.36c-.26.29-1 1-.99 2.43.01 1.43 1.03 2.81 1.17 3.01.14.19 2.02 3.08 4.9 4.31 2.88 1.23 2.88.82 3.4.77.51-.06 1.65-.66 1.88-1.3.23-.64.23-1.18.16-1.3-.07-.12-.27-.19-.57-.34z"/>
+              </svg>
+            </span>
+            <div class="service-text">
+              <div class="service-title">Canal Gratis de WhatsApp:</div>
+              <a class="btn service-cta" href="https://whatsapp.com/channel/0029VacrPYe8PgsLhdEQpM15" target="_blank" rel="noopener noreferrer">Unirme por WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="services scroll-animate" aria-labelledby="testimonials-heading">
+        <h2 id="testimonials-heading">Testimonios y ganancias</h2>
+
+        <div class="service-box">
+          <div class="service-item">
+            <span class="service-icon" aria-hidden="true">
+              <!-- WhatsApp SVG (inline) - reused -->
+              <svg class="icon icon-whatsapp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+                <path fill="#25D366" d="M20.52 3.48A11.91 11.91 0 0012 0C5.373 0 .01 5.37.01 12A11.9 11.9 0 003.02 18.6L0 24l5.55-3.02A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12 0-3.2-1.25-6.17-3.48-8.52z" opacity=".08"/>
+                <path fill="#fff" d="M19.1 14.1c-.3-.15-1.75-.86-2.02-.96-.27-.1-.46-.15-.65.15-.19.3-.74.96-.9 1.15-.16.19-.33.22-.61.07-.28-.15-1.18-.44-2.25-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.29-.02-.45.13-.6.12-.12.28-.31.42-.47.14-.16.19-.28.28-.46.09-.19.05-.36-.02-.5-.07-.15-.65-1.56-.89-2.15-.23-.56-.46-.48-.63-.49-.16-.01-.35-.01-.54-.01s-.5.07-.76.36c-.26.29-1 1-.99 2.43.01 1.43 1.03 2.81 1.17 3.01.14.19 2.02 3.08 4.9 4.31 2.88 1.23 2.88.82 3.4.77.51-.06 1.65-.66 1.88-1.3.23-.64.23-1.18.16-1.3-.07-.12-.27-.19-.57-.34z"/>
+              </svg>
+            </span>
+            <div class="service-text">
+              <div class="service-title">Testimonios y ganancias</div>
+              <a class="btn service-cta" href="https://whatsapp.com/channel/0029VaiMen5D8SE1qM3O7u3r" target="_blank" rel="noopener noreferrer">Ver Testimonios / Unirme</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="services scroll-animate" aria-labelledby="analyst-heading">
+        <h2 id="analyst-heading">Contacto Directo</h2>
+
+        <div class="service-box">
+          <div class="service-item">
+            <span class="service-icon" aria-hidden="true">
+              <!-- Chat Bubble Icon -->
+              <svg class="icon icon-chat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+                <!-- Background circle with gradient like WhatsApp -->
+                <defs>
+                  <linearGradient id="chat-grad" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stop-color="#2AABEE"/>
+                    <stop offset="1" stop-color="#229ED9"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="12" cy="12" r="12" fill="url(#chat-grad)" opacity="0.12"/>
+                <!-- Chat bubble with white border -->
+                <path d="M12 4C7.6 4 4 7.1 4 11c0 1.8.7 3.4 1.9 4.7L4.5 19l3.6-1.2C9.2 18.6 10.6 19 12 19c4.4 0 8-3.1 8-7s-3.6-7-8-7z" 
+                      fill="#fff" stroke="#fff" stroke-width="0.5"/>
+                <!-- Three dots inside bubble -->
+                <circle cx="9" cy="11" r="1.2" fill="#2AABEE"/>
+                <circle cx="12" cy="11" r="1.2" fill="#2AABEE"/>
+                <circle cx="15" cy="11" r="1.2" fill="#2AABEE"/>
+              </svg>
+            </span>
+            <div class="service-text">
+              <div class="service-title">Asesoria Personalizada</div>
+              <a class="btn service-cta" href="https://t.me/ElAnalistaCol" target="_blank" rel="noopener noreferrer">Ir a El Analista</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Botón final igual al CTA principal -->
+      <a class="btn main-cta final-cta scroll-animate" href="https://t.me/+fzyyyIPlGNswY2Jh" target="_blank" rel="noopener noreferrer">
+        <!-- Telegram icon inside main CTA -->
+        <svg class="cta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="12" fill="#fff" opacity="0.06" />
+          <path fill="#fff" d="M21.6 3.6c-.2-.7-.9-1.1-1.6-.9L2.9 9.1c-.6.2-.7 1.1-.1 1.4l4.1 1.6 1.6 4.6c.2.6 1 0 .9-.3l-.7-2.5 4.4 3c.5.3 1.1 0 1.2-.6l3.2-17.1c.1-.2.1-.4 0-.6zM9.6 13.3l6.1-5.1-7.2 4.9 1.1.2z" />
+        </svg>
+        Únete a la familia
+      </a>
+    <div class="privacy-link">
+      <a href="/privacy.html">Política de Privacidad</a>
+    </div>
+      
+    </div>
+  </section>
+
+  <!-- Lightbox for full-image preview -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" data-close="true"></div>
+    <div class="lightbox-content" role="dialog" aria-modal="true">
+      <button class="lightbox-close" aria-label="Cerrar imagen">×</button>
+      <img id="lightboxImg" src="" alt="Imagen ampliada" />
+    </div>
+  </div>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
