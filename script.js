@@ -36,7 +36,7 @@ if (btn) {
       return;
     }
 
-    window.location.href = "https://t.me/+fzyyyIPlGNswY2Jh";
+    window.location.href = "https://t.me/+OCpEnkS65oZlZTcx";
   });
 } else {
   console.warn("telegramBtn not found in DOM");
